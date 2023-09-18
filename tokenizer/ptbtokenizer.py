@@ -42,13 +42,8 @@ class PTBTokenizer:
         # save sentences to temporary file
         # ======================================================
 
-        try:
-            path_to_jar_dirname=os.path.dirname(os.path.abspath(__file__))
-            #path_to_jar_dirname=os.path.dirname(os.path.expanduser("~"))
-            tmp_file = tempfile.NamedTemporaryFile(delete=False, dir=path_to_jar_dirname)
-        except:
-            path_to_jar_dirname='/home/aiscuser'
-            tmp_file = tempfile.NamedTemporaryFile(delete=False, dir=path_to_jar_dirname)
+        path_to_jar_dirname=os.path.dirname(os.path.abspath(__file__))
+        tmp_file = tempfile.NamedTemporaryFile(delete=False, dir=path_to_jar_dirname)
         tmp_file.write(sentences.encode())
         tmp_file.close()
 
